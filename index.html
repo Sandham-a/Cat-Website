@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/ico" href ="cat icon.jpg">
+    <title>The wonderful world of cats</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+<div class = "wholeBody">
+
+    <h1> The Wonderful World of Cats </h1>
+    <p>Please select a breed and then click the button below and we'll email you information about the breed</p>
+    <!-- code for the selction box-->
+    <select onchange="showBreedImage(value)" name="breed_selector" id="breed_selector">
+    </select>
+    <br>
+    <!-- code for the image-->
+    <div>
+        <img id="breed_image"></img alt="A picture of a cat">
+    </div>
+    <!-- Modal the current image-->
+    <!-- The Modal -->
+    
+    <div id="myModal" class="modal">
+
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+  
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="img01">
+  
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+    </div>
+
+    <!--Random Cat button-->
+   
+    <!-- Email button-->
+    <br>
+    <button class ="email button" onclick = sendEmail()>Email me information</button>
+</div>      
+</body>
+
+<!--Calling the email API with its public key-->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        </script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("efpA78LB7JSbF1TVT");
+   })();
+</script>
+
+<script src = "cats.js"></script>
+</html>
